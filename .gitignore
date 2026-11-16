@@ -1,0 +1,21 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+.env
+.env.*
+!.env.example
+
+# Never commit operational inventory data or uploaded spreadsheets
+*.xlsx
+*.xls
+*.csv
+/data/
+/uploads/
+/backups/
+*.backup.json
+
+# TypeScript incremental build info
+*.tsbuildinfo
