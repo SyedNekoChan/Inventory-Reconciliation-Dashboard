@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Inventory Reconciliation</title>
+    <!--
+      No external resources are referenced. The application makes no network
+      requests at runtime, so it works offline and on restricted networks, and
+      nothing about the inventory data can leak through a third-party request.
+      Typography uses the platform font stack (see tailwind.config.js).
+    -->
+    <script>
+      // Apply stored theme before first paint to avoid a flash.
+      try {
+        var t = localStorage.getItem('irt.theme');
+        var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark', dark);
+      } catch (e) { /* storage unavailable */ }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
